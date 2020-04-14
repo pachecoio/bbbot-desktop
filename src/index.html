@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>BBBOT</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>BBBOT</h1>
+    </div>
+    <div class="container">
+      <form class="form" id="form">
+        <input
+          type="text"
+          id="url"
+          class="form__input"
+          name="url"
+          placeholder="URL da votação"
+        />
+        <input
+          type="email"
+          id="email"
+          class="form__input"
+          name="email"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          id="password"
+          class="form__input"
+          name="password"
+          placeholder="Senha"
+        />
+        <h2 class="form__vote__title">
+          Em quem você deseja votar?
+        </h2>
+        <div class="form__radios">
+          <div class="form__radio">
+            <input
+              type="radio"
+              class="form__radio__input"
+              name="personName"
+              value="Gizelly"
+              id="Gizelly"
+            />
+            <label class="form__radio__label" for="Gizelly">
+              Gizelly
+            </label>
+          </div>
+        </div>
+        <button class="btn btn__primary" id="submitButton" disabled="true">
+          Start
+        </button>
+      </form>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
