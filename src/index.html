@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container container__column">
       <h1>BBBOT</h1>
+      <p id="bots">Nenhum bot ativo</p>
     </div>
     <div class="container">
       <form class="form" id="form">
@@ -48,9 +49,35 @@
               Gizelly
             </label>
           </div>
+          <div class="form__radio">
+            <input
+              type="radio"
+              class="form__radio__input"
+              name="personName"
+              value="Mari"
+              id="Mari"
+            />
+            <label class="form__radio__label" for="Mari">
+              Mari
+            </label>
+          </div>
+        </div>
+        <div class="form__radios">
+          <div class="form__radio">
+            <input
+              type="checkbox"
+              class="form__radio__input"
+              name="view"
+              value="view"
+              id="view"
+            />
+            <label class="form__radio__label" for="Gizelly">
+              Visualizar votação
+            </label>
+          </div>
         </div>
         <button class="btn btn__primary" id="submitButton" disabled="true">
-          Start
+          Iniciar bot
         </button>
       </form>
     </div>

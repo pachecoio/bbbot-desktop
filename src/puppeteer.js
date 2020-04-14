@@ -2,10 +2,11 @@ const puppeteer = require("puppeteer");
 
 let browser;
 
-const startScript = async (url = process.env.URL, username = process.env.EMAIL, password = process.env.PASSWORD, personName = process.env.NAME) => {
-  const executablePath = `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`;
+const startScript = async (url = process.env.URL, username = process.env.EMAIL, password = process.env.PASSWORD, personName = process.env.NAME, headless = true) => {
+  // const executablePath = `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`; // mac
+  const executablePath = `C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe`; // windows
   browser = await puppeteer.launch({
-    headless: false,
+    headless,
     executablePath,
   });
   const page = await browser.newPage();
