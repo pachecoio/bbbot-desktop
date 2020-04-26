@@ -3,7 +3,7 @@ const startScript = require("./puppeteer");
 window.addEventListener("load", (event) => {
   const formData = {
     url:
-      "https://gshow.globo.com/realities/bbb/bbb20/votacao/paredao-bbb20-quem-voce-quer-eliminar-babu-rafa-ou-thelma-0ffab592-8b60-42aa-b29f-ff828805e7ed.ghtml",
+      "https://gshow.globo.com/realities/bbb/bbb20/votacao/quem-deve-vencer-o-bbb20-934c622d-6036-4d57-a2d3-af4b982c1af9.ghtml",
   };
 
   let botsRunning = 0;

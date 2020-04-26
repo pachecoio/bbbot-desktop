@@ -2,9 +2,17 @@ const puppeteer = require("puppeteer");
 
 let browser;
 
-const startScript = async (url = process.env.URL, username = process.env.EMAIL, password = process.env.PASSWORD, personName = process.env.NAME, headless = true) => {
-  // const executablePath = `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`; // mac
-  const executablePath = `C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe`; // windows
+const startScript = async (
+  url = process.env.URL,
+  username = process.env.EMAIL,
+  password = process.env.PASSWORD,
+  personName = process.env.NAME,
+  headless = true
+) => {
+  const executablePath =
+    process.platform === "darwin"
+      ? `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+      : `C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe`;
   browser = await puppeteer.launch({
     headless,
     executablePath,
@@ -110,13 +118,13 @@ async function clickOnElement(page, elem, x = null, y = null) {
 }
 
 const selectPerson = async (page, name) => {
-  console.log('select', name);
+  console.log("select", name);
   try {
     await page.waitFor(2000);
-    await page.waitFor('div._21TgL80MNap3Ua4HvZTb4t');
+    await page.waitFor("div._21TgL80MNap3Ua4HvZTb4t");
     const person = await findByText(page, name, "div._21TgL80MNap3Ua4HvZTb4t");
     await page.waitFor(2000);
-    console.log('person found', 'click it');
+    console.log("person found", "click it");
     person.click();
     await page.waitFor(5000);
   } catch (error) {
